@@ -202,9 +202,48 @@ footer a:hover{text-decoration:underline}
   caption{display:block}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Missing pets ticker */
+.ticker{background:var(--red);color:#fff;display:flex;align-items:stretch;overflow:hidden}
+.ticker-label{background:var(--navy2);color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;display:flex;align-items:center;padding:8px 14px;flex:0 0 auto;white-space:nowrap;z-index:2}
+.ticker-viewport{overflow:hidden;flex:1;display:flex;align-items:center}
+.ticker-track{display:inline-flex;align-items:center;white-space:nowrap;will-change:transform;animation:tickerScroll 95s linear infinite}
+.ticker:hover .ticker-track,.ticker:focus-within .ticker-track{animation-play-state:paused}
+@keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{display:inline-flex;align-items:center;font-size:.92rem}
+.ticker-item a{color:#fff;text-decoration:none}
+.ticker-item a:hover{text-decoration:underline}
+.ticker-item .pet-name{font-weight:800}
+.ticker-sep{color:var(--gold);margin:0 16px;font-weight:900}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none;flex-wrap:wrap;white-space:normal;padding:6px 0}}
+
+/* News */
+.news-meta{font-size:.9rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-weight:700;margin:0 0 6px}
+.news-article{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);padding:28px;box-shadow:var(--shadow)}
+.news-article h3{font-size:clamp(1.35rem,2.6vw,1.8rem);margin:0 0 12px}
+.news-article p{margin:0 0 14px}
+.news-article blockquote{margin:22px 0;padding:18px 22px;border-left:5px solid var(--gold);background:var(--bg3);font-family:"Merriweather",Georgia,serif;font-size:1.08rem;line-height:1.6}
+.news-article blockquote cite{display:block;margin-top:10px;font-family:"Public Sans",sans-serif;font-style:normal;font-weight:700;font-size:.95rem}
+.media-contact{border:1px solid var(--line);background:var(--bg2);padding:18px 20px;margin-top:22px}
+.media-contact h4{margin:0 0 8px;font-size:1rem;text-transform:uppercase;letter-spacing:.05em}
+.media-contact p{margin:0}
 </style>
 </head>
 <body>
+
+<div class="ticker" aria-label="Pets missing in Los Angeles">
+  <div class="ticker-label">Pets Missing in LA</div>
+  <div class="ticker-viewport"><div class="ticker-track" id="tickerTrack">
+    <span class="ticker-item"><a href="https://www.pawboost.com/landing/pet/J7sDSNsyOG4Q-hfEly0EJiiWg9uLvC82/lost-estrellaramos-los-angeles-ca-91331" target="_blank" rel="noopener"><span class="pet-name">Estrella Ramos</span> — female dog, medium black-and-tan, white bandana with black paw prints, one upright ear and one floppy ear — last seen Nov 18, 2026, Los Angeles 91331</a></span><span class="ticker-sep" aria-hidden="true">★</span>
+    <span class="ticker-item"><a href="https://www.pawboost.com/landing/pet/L1a3zsO3NEGWjBahRM_FFL_rq2L6jY7I/lost-mina-los-angeles-ca-90006" target="_blank" rel="noopener"><span class="pet-name">Mina</span> — female dog, white with one brown spot — last seen Nov 19, 2026, Los Angeles 90006</a></span><span class="ticker-sep" aria-hidden="true">★</span>
+    <span class="ticker-item"><a href="https://www.pawboost.com/landing/pet/QEnsBmnGd5kBWQirqKXhyYbbBWYvkcN-/lost-mina-los-angeles-ca-90026" target="_blank" rel="noopener"><span class="pet-name">Mina</span> — female dog, white with one brown spot — last seen Nov 18, 2026, Los Angeles 90026</a></span><span class="ticker-sep" aria-hidden="true">★</span>
+    <span class="ticker-item"><a href="https://www.pawboost.com/landing/pet/Lw9ISm9hT-v4CMSGr0jXq0akflv_oBvm/lost-myklo-los-angeles-ca-90062" target="_blank" rel="noopener"><span class="pet-name">Myklo</span> — male dog, medium white with tan/brown patches, six toes on each hind paw, burgundy collar — last seen Nov 14, 2026, Los Angeles 90062</a></span><span class="ticker-sep" aria-hidden="true">★</span>
+    <span class="ticker-item"><span class="pet-name">Milo</span> — male black cat with white chest, paws and nose — last seen Nov 14, 2026, N Mission Rd &amp; Daly St, Los Angeles 90031</span><span class="ticker-sep" aria-hidden="true">★</span>
+    <span class="ticker-item"><a href="https://www.pawboost.com/landing/pet/JwhCrf0LWAvnMIW_7lyMRJLPHAgN8CKk/lost-ellie-los-angeles-ca-90023" target="_blank" rel="noopener"><span class="pet-name">Ellie</span> — female dog, small husky runt — last seen Nov 3, 2026, Los Angeles 90023 — $300 reward</a></span><span class="ticker-sep" aria-hidden="true">★</span>
+    <span class="ticker-item">Report a missing pet: <a href="mailto:kerrylewis052@gmail.com?subject=Missing%20Pet%20Report">&nbsp;kerrylewis052@gmail.com</a></span><span class="ticker-sep" aria-hidden="true">★</span>
+    <span class="ticker-item">Listings checked Nov 22, 2026 — see PawBoost Los Angeles and LA Animal Services Lost Pets for the full lists.</span><span class="ticker-sep" aria-hidden="true">★</span>
+  </div></div>
+</div>
 
 <div class="gov-banner"><div class="wrap">
   <strong>Animal Welfare Caucus</strong><span class="dot">•</span><span>Los Angeles, California</span><span class="dot">•</span><span>Founded November 2026</span><span class="dot">•</span><span>An independent citizen caucus — a voice for the voiceless</span>
@@ -224,6 +263,7 @@ footer a:hover{text-decoration:underline}
 
 <nav class="main-nav" aria-label="Main navigation"><div class="wrap" role="tablist" aria-label="Site sections">
   <button class="tab-btn" role="tab" id="tab-home" aria-controls="panel-home" aria-selected="true" data-tab="home" type="button">Home</button>
+  <button class="tab-btn" role="tab" id="tab-news" aria-controls="panel-news" aria-selected="false" tabindex="-1" data-tab="news" type="button">News</button>
   <button class="tab-btn" role="tab" id="tab-memorial" aria-controls="panel-memorial" aria-selected="false" tabindex="-1" data-tab="memorial" type="button">In Memoriam</button>
   <button class="tab-btn" role="tab" id="tab-policy" aria-controls="panel-policy" aria-selected="false" tabindex="-1" data-tab="policy" type="button">Policy Platform</button>
   <button class="tab-btn" role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="false" tabindex="-1" data-tab="projects" type="button">Projects</button>
@@ -272,6 +312,34 @@ footer a:hover{text-decoration:underline}
   <div style="margin-top:18px" class="alert-red"><strong>Why we were founded.</strong> In November 2026, Fiona — the beloved Cincinnati Zoo hippo who survived a premature birth and won the world's heart — died after a preventable incident in her enclosure. Founder Dr. Kerry B. Lewis started the Animal Welfare Caucus days later with a simple demand: stronger safeguards, real monitoring, and real consequences when institutions fail the animals in their care — starting here in Los Angeles.</div>
 </div></section>
 </div><!-- /panel-home -->
+
+<!-- NEWS PANEL -->
+<div class="tab-panel" id="panel-news" role="tabpanel" aria-labelledby="tab-news" data-panel="news" hidden>
+<section id="news"><div class="wrap">
+  <div class="sec-head"><p class="sec-label">News</p><h2>Caucus news &amp; press releases</h2>
+  <p>Official statements and announcements from the Animal Welfare Caucus, published for the public record.</p></div>
+
+  <article class="news-article">
+    <p class="news-meta">Press Release • November 22, 2026 • Los Angeles, California</p>
+    <h3>Animal Welfare Caucus Raises High Concern Over Conditions at Two Los Angeles Shelters</h3>
+    <p>The Animal Welfare Caucus today sent two separate emails of concern to Gabrielle Amster, General Manager of Los Angeles Animal Services, and directly to the shelter teams at two of the city's shelters — Chesterfield Square / South LA and North Central — asking the Department to account for conditions at both facilities.</p>
+    <p><strong>Chesterfield Square / South LA</strong> (1850 W. 60th St., Los Angeles, CA 90047) has been reported as the most crowded shelter in the LA Animal Services system. The Caucus asked the Department about kennel capacity, dog walks and enrichment, and the intake pressure coming from South Los Angeles.</p>
+    <p><strong>North Central</strong> (3201 Lacy St., Los Angeles, CA 90031) is a large intake shelter serving northeast Los Angeles and downtown-adjacent areas. The Caucus asked about small-animal care — including rabbits and guinea pigs — exercise for court-hold dogs, and staffing.</p>
+    <p>Both shelters carry a <strong>High Concern</strong> rating on the Caucus's public Shelter Watch List. The Caucus will continue watching both facilities and will report what it finds.</p>
+    <blockquote>
+      “This is not an accusation — it is a question the public deserves an answer to. Please let me know what steps the Department is taking at this shelter, and who I should speak with to follow up.”
+      <cite>— Dr. Kerry B. Lewis, Founder &amp; Chair, Animal Welfare Caucus</cite>
+    </blockquote>
+    <div class="media-contact">
+      <h4>Media Contact</h4>
+      <p>Dr. Kerry B. Lewis, Founder &amp; Chair<br>
+      Email: <a href="mailto:kerrylewis052@gmail.com">kerrylewis052@gmail.com</a><br>
+      Phone: <a href="tel:3234254125">(323) 425-4125</a><br>
+      Web: <a href="https://drkerryblewis.org">drkerryblewis.org</a></p>
+    </div>
+  </article>
+</div></section>
+</div><!-- /panel-news -->
 
 <!-- MEMORIAL PANEL -->
 <div class="tab-panel" id="panel-memorial" role="tabpanel" aria-labelledby="tab-memorial" data-panel="memorial" hidden>
@@ -519,7 +587,7 @@ SEATS.forEach(function(s){
 var tabBtns=Array.prototype.slice.call(document.querySelectorAll('.tab-btn'));
 var tabPanels=Array.prototype.slice.call(document.querySelectorAll('.tab-panel'));
 var TAB_IDS=tabBtns.map(function(b){return b.getAttribute('data-tab');});
-var HASH_TO_TAB={home:'home',mission:'home',memorial:'memorial',policy:'policy',projects:'projects',outreach:'outreach',board:'board','shelter-watch':'shelter-watch',apply:'apply',contact:'contact'};
+var HASH_TO_TAB={home:'home',mission:'home',news:'news',memorial:'memorial',policy:'policy',projects:'projects',outreach:'outreach',board:'board','shelter-watch':'shelter-watch',apply:'apply',contact:'contact'};
 function activateTab(id,focusTab){
   if(TAB_IDS.indexOf(id)===-1) id='home';
   tabBtns.forEach(function(b){
@@ -590,6 +658,12 @@ document.addEventListener('keydown',function(e){
   if(r.top<window.innerHeight&&r.bottom>0){ if(e.key==='ArrowRight'){next();restart();} if(e.key==='ArrowLeft'){show(idx-1);restart();} }
 });
 show(0);restart();
+
+/* Missing pets ticker — duplicate content once for a seamless loop */
+(function(){
+  var track=document.getElementById('tickerTrack');
+  if(track){ track.innerHTML+=track.innerHTML.replace(/<a /g,'<a tabindex="-1" aria-hidden="true" '); }
+})();
 
 /* Application form -> mailto */
 document.getElementById('applyForm').addEventListener('submit',function(e){
