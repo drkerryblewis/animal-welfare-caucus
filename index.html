@@ -232,6 +232,25 @@ footer a:hover{text-decoration:underline}
 .media-contact{border:1px solid var(--line);background:var(--bg2);padding:18px 20px;margin-top:22px}
 .media-contact h4{margin:0 0 8px;font-size:1rem;text-transform:uppercase;letter-spacing:.05em}
 .media-contact p{margin:0}
+.news-article + .news-article{margin-top:26px}
+.news-article h4{font-family:"Merriweather",Georgia,serif;font-size:1.12rem;margin:26px 0 10px;padding-top:18px;border-top:1px solid var(--line)}
+.news-article h4:first-of-type{margin-top:20px}
+.news-article ul{margin:0 0 16px;padding-left:22px}
+.news-article li{margin-bottom:10px;line-height:1.6}
+.news-article li:last-child{margin-bottom:0}
+.news-article .timeline-list{list-style:none;padding-left:0}
+.news-article .timeline-list li{padding-left:16px;border-left:3px solid var(--gold);margin-bottom:14px}
+.news-article .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 6px}
+.news-article .stat-box{background:var(--bg3);padding:16px 18px;text-align:center}
+.news-article .stat-box b{display:block;font-family:"Merriweather",serif;font-size:2rem;line-height:1;color:var(--navy)}
+@media(prefers-color-scheme:dark){.news-article .stat-box b{color:#fff}}
+.news-article .stat-box span{font-size:.9rem;color:var(--muted);font-weight:600}
+.news-article .action-box{border:1px solid var(--line);background:var(--bg2);padding:18px 20px;margin:18px 0}
+.news-article .action-box p:last-child{margin-bottom:0}
+.news-article .privacy-note{font-size:.94rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:22px}
+.news-article .hashtags{font-size:.92rem;color:var(--blue);font-weight:600;line-height:1.7;word-break:break-word}
+@media(prefers-color-scheme:dark){.news-article .hashtags{color:#7ab8e6}}
+@media(max-width:600px){.news-article{padding:20px}.news-article .stat-row{grid-template-columns:1fr 1fr}}
 
 /* Christmas Contest */
 .contest-banner{background:var(--gold);color:#112e51;border-bottom:4px solid var(--red)}
@@ -456,6 +475,59 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
 <section id="news"><div class="wrap">
   <div class="sec-head"><p class="sec-label">News</p><h2>Caucus news &amp; press releases</h2>
   <p>Official statements and announcements from the Animal Welfare Caucus, published for the public record.</p></div>
+
+  <article class="news-article">
+    <p class="news-meta">Community Update • November 24, 2026 • Pasadena, California</p>
+    <h3>Community Update: What We Know So Far — Pasadena Humane 38 Dogs</h3>
+    <p>We are sharing this update so the community has one clear, factual place to check, instead of piecing together rumors from comments and screenshots.</p>
+
+    <div class="stat-row" aria-label="Key numbers">
+      <div class="stat-box"><b>38</b><span>dogs removed Nov. 18</span></div>
+      <div class="stat-box"><b>20</b><span>still available as of Tuesday</span></div>
+    </div>
+
+    <h4>Timeline — What Happened</h4>
+    <ul class="timeline-list">
+      <li><strong>Before Nov. 18:</strong> Pasadena Humane received complaints about welfare and living conditions. Officers made multiple attempts to work with the owner to address ongoing concerns before obtaining a search warrant authorizing removal.</li>
+      <li><strong>Wednesday, Nov. 18:</strong> 38 dogs were removed from a home in Pasadena and sent to Pasadena Humane.</li>
+      <li><strong>Thursday, Nov. 19:</strong> Health exams for all 38 dogs were completed.</li>
+      <li><strong>At first:</strong> The 38 dogs were not immediately available for foster or adoption because of an ongoing investigation. Pasadena Humane asked the community to help free kennel space by adopting or fostering other dogs.</li>
+      <li><strong>Later that week:</strong> The dogs were released from evidentiary hold after being surrendered to Pasadena Humane and made available for adoption or fostering.</li>
+      <li><strong>As of Tuesday:</strong> 20 of those dogs remained available for adoption or fostering.</li>
+    </ul>
+
+    <h4>What We Know</h4>
+    <ul>
+      <li>The dogs came into care as a group of 38 from one home after a search warrant and surrender process.</li>
+      <li>Staff named the group after fruits to help track and list them, and the full list is on the shelter website.</li>
+      <li>Many of the dogs are enrolled in the Pasadena Humane Positive Start program, which offers extra help after adoption.</li>
+      <li>Temperaments across the group vary. Some are shy, some are social, some need a quiet home and time to decompress. Meet in person before you decide.</li>
+      <li>Types reported among the group include Chihuahuas, Chihuahua mixes, and Belgian Malinois puppies, plus other small and medium dogs.</li>
+    </ul>
+
+    <h4>What We Do Not Know Yet</h4>
+    <ul>
+      <li>We do not have confirmed final outcomes for every dog beyond the Tuesday count of 20 still available. That number will change as adoptions and fosters happen.</li>
+      <li>We do not have confirmed details on any ongoing investigation beyond what Pasadena Humane has already stated. We will not speculate on charges, intent, or personal history.</li>
+      <li>We do not have confirmed medical details for individual dogs beyond the general health exams. Ask Pasadena Humane directly about the specific dog you meet.</li>
+    </ul>
+
+    <h4>What You Can Do Now</h4>
+    <ul>
+      <li>Go meet the remaining 20 in person. Do not choose based on a photo alone.</li>
+      <li>If you cannot adopt, foster another dog at Pasadena Humane to free a kennel. That still directly helps this group.</li>
+      <li>Share this update, not screenshots with names or addresses.</li>
+      <li>Donate food, supplies, or funds if you cannot foster or adopt.</li>
+    </ul>
+    <div class="action-box">
+      <p><strong>Adoption window:</strong> Daily 9:30 a.m. to 5:30 p.m.</p>
+      <p><strong>Pasadena Humane</strong><br>More info: <a href="https://pasadenahumane.org" target="_blank" rel="noopener">pasadenahumane.org</a></p>
+    </div>
+
+    <p class="privacy-note"><strong>Disclaimer on privacy:</strong> We will not publish the name of any private person, the name or identifying details of any individual pet in this case, or the whereabouts of any person or pet involved. Please do not post names, addresses, license plates, or other identifying information in the comments. We will remove it to protect privacy and the process. For verified adoption information, contact Pasadena Humane directly.</p>
+    <p>We will post the next update when Pasadena Humane confirms new numbers or new needs.</p>
+    <p class="hashtags">#AnimalWelfareCaucus #PasadenaHumane #CommunityUpdate #AdoptDontShop #FosterSavesLives #LosAngeles</p>
+  </article>
 
   <article class="news-article">
     <p class="news-meta">Press Release • November 22, 2026 • Los Angeles, California</p>
