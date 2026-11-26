@@ -517,6 +517,48 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
 })();
 </script>
 
+<div class="thanks-banner" id="christmasBanner" role="region" aria-label="Christmas greeting" style="display:none"><div class="wrap">
+  <h2>Merry Christmas</h2>
+  <p>Merry Christmas from The Animal Welfare Caucus — wishing every pet a warm home and a full bowl.</p>
+</div></div>
+<script>
+(function(){
+  var banner=document.getElementById("christmasBanner");
+  if(!banner)return;
+  /* Visible only on Christmas Day, Dec 25, 2026, 00:00–23:59 PST (= Dec 25, 2026 08:00 UTC – Dec 26, 2026 07:59 UTC). */
+  var start=Date.UTC(2026,11,25,8,0,0);
+  var cutoff=Date.UTC(2026,11,26,7,59,0);
+  function check(){
+    var now=Date.now();
+    if(now>=cutoff){ if(banner.parentNode){ banner.parentNode.removeChild(banner); } return; }
+    banner.style.display=(now>=start)?"":"none";
+  }
+  check();
+  setInterval(check,60000);
+})();
+</script>
+
+<div class="thanks-banner" id="newYearBanner" role="region" aria-label="New Year greeting" style="display:none"><div class="wrap">
+  <h2>Happy New Year</h2>
+  <p>Happy New Year from The Animal Welfare Caucus — here&rsquo;s to a year of more rescues, more adoptions, and more pets home safe.</p>
+</div></div>
+<script>
+(function(){
+  var banner=document.getElementById("newYearBanner");
+  if(!banner)return;
+  /* Visible only on New Year's Day, Jan 1, 2027, 00:00–23:59 PST (= Jan 1, 2027 08:00 UTC – Jan 2, 2027 07:59 UTC). */
+  var start=Date.UTC(2027,0,1,8,0,0);
+  var cutoff=Date.UTC(2027,0,2,7,59,0);
+  function check(){
+    var now=Date.now();
+    if(now>=cutoff){ if(banner.parentNode){ banner.parentNode.removeChild(banner); } return; }
+    banner.style.display=(now>=start)?"":"none";
+  }
+  check();
+  setInterval(check,60000);
+})();
+</script>
+
 <nav class="main-nav" aria-label="Main navigation"><div class="wrap" role="tablist" aria-label="Site sections">
   <button class="tab-btn" role="tab" id="tab-home" aria-controls="panel-home" aria-selected="true" data-tab="home" type="button">Home</button>
   <button class="tab-btn" role="tab" id="tab-news" aria-controls="panel-news" aria-selected="false" tabindex="-1" data-tab="news" type="button">News</button>
