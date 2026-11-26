@@ -879,18 +879,34 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
     <button type="button" data-filter="zoo" aria-pressed="false">LA Zoo</button>
     <button type="button" data-filter="palmdale" aria-pressed="false">Palmdale (County)</button>
     <button type="button" data-filter="skidrow" aria-pressed="false">Skid Row</button>
+    <button type="button" data-filter="rescues" aria-pressed="false">Rescues</button>
   </nav>
   <p class="sw-count" id="swFeedCount" aria-live="polite"></p>
 
   <div class="sw-feed" id="swFeed" aria-label="Shelter Watch updates, newest first">
 
+    <!-- Nov 25 — Wagmor Pets -->
+    <article class="sw-entry latest" data-cat="rescues">
+      <div class="sw-entry-card">
+        <div class="sw-entry-top">
+          <span class="sw-date">Tue · Nov 25, 2026</span>
+          <span class="sw-cat">Studio City, Los Angeles</span>
+          <span class="sw-new">Latest</span>
+        </div>
+        <h3>Wagmor Pets — Pending Legal Battle</h3>
+        <p>The Los Angeles City Attorney filed a civil enforcement action (Case No. 26STCV33334) against Wagmor Pets, its founder Melissa Bacelar, and two related companies, alleging puppy laundering — buying dogs from commercial breeders, including puppy mills, and reselling them as rescued animals. The City seeks a permanent injunction, restitution, and civil penalties reported at more than $7 million. The Caucus supports the case. The allegations have not been proven in court, and the defendants deny them.</p>
+        <div class="sw-status">
+          <span class="sw-chip high">Pending Legal Battle</span>
+        </div>
+      </div>
+    </article>
+
     <!-- Nov 25 — Justice for Gemma -->
-    <article class="sw-entry latest" data-cat="officials">
+    <article class="sw-entry" data-cat="officials">
       <div class="sw-entry-card">
         <div class="sw-entry-top">
           <span class="sw-date">Wed · Nov 25, 2026</span>
           <span class="sw-cat">Linn County, Iowa</span>
-          <span class="sw-new">Latest</span>
         </div>
         <h3>Justice for Gemma</h3>
         <p>The Caucus sent a strong demand to <strong>Sheriff Brian D. Gardner</strong> and the <strong>Linn County Sheriff&rsquo;s Office</strong> for a full investigation into the abandonment and death of Gemma, a 14-year-old deaf dog in Cedar Rapids, Iowa, and the strongest charges the evidence supports. A written reply was requested by <strong>December 9, 2026</strong>.</p>
@@ -1683,7 +1699,8 @@ document.getElementById('applyForm').addEventListener('submit',function(e){
       officials:'Showing City Hall & Officials updates',
       zoo:'Showing LA Zoo updates',
       palmdale:'Showing Palmdale (County) updates',
-      skidrow:'Showing Skid Row updates'
+      skidrow:'Showing Skid Row updates',
+      rescues:'Showing Rescues updates'
     };
     return map[f]||'Showing updates';
   }
