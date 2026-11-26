@@ -474,6 +474,13 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
 }
 .sw-chip .who{text-transform:none;letter-spacing:0;font-weight:600}
 .sw-empty{display:none;text-align:center;color:var(--muted);border:2px dashed var(--line);padding:28px 16px}
+
+/* Thanksgiving banner */
+.thanks-banner{background:#C9A227;color:#0A2340;text-align:center;border-bottom:3px solid #0A2340}
+.thanks-banner .wrap{padding-top:20px;padding-bottom:20px}
+.thanks-banner h2{font-family:"Merriweather",Georgia,serif;font-weight:900;color:#0A2340;font-size:clamp(1.7rem,4vw,2.5rem);margin:0 0 6px;letter-spacing:.01em}
+.thanks-banner p{margin:0;font-size:1rem;color:#0A2340}
+@media(max-width:600px){.thanks-banner .wrap{padding-top:16px;padding-bottom:16px}.thanks-banner p{font-size:.94rem}}
 </style>
 </head>
 <body>
@@ -493,6 +500,22 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
     <button class="btn btn-gold" type="button" data-goto-tab="apply">Apply for a Board Seat</button>
   </div>
 </div></header>
+
+<div class="thanks-banner" id="thanksBanner" role="region" aria-label="Thanksgiving greeting"><div class="wrap">
+  <h2>Happy Thanksgiving</h2>
+  <p>Grateful for every pet, every adopter, and every neighbor who shows up for them. — The Animal Welfare Caucus</p>
+</div></div>
+<script>
+(function(){
+  var banner=document.getElementById("thanksBanner");
+  if(!banner)return;
+  /* Banner comes down at 11:59 PM PST on Thanksgiving Day, Nov 26, 2026 (= Nov 27, 2026 07:59 UTC). */
+  var cutoff=Date.UTC(2026,10,27,7,59,0);
+  function check(){ if(Date.now()>=cutoff && banner.parentNode){ banner.parentNode.removeChild(banner); } }
+  check();
+  if(banner.parentNode){ setInterval(check,60000); }
+})();
+</script>
 
 <nav class="main-nav" aria-label="Main navigation"><div class="wrap" role="tablist" aria-label="Site sections">
   <button class="tab-btn" role="tab" id="tab-home" aria-controls="panel-home" aria-selected="true" data-tab="home" type="button">Home</button>
