@@ -264,6 +264,9 @@ footer a:hover{text-decoration:underline}
 .contest-hero::before{content:"";position:absolute;inset:0 0 auto 0;height:8px;background:repeating-linear-gradient(90deg,var(--red) 0 36px,var(--green) 36px 72px,var(--gold) 72px 108px,#fff 108px 144px)}
 .contest-hero .wrap{padding-top:46px;padding-bottom:40px;text-align:center}
 .contest-badge{display:inline-block;background:var(--red);color:#fff;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;padding:6px 14px;border-radius:999px;border:2px solid #fff}
+.oos-badge{display:inline-block;background:var(--red);color:#fff;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;padding:6px 14px;border-radius:999px;vertical-align:middle}
+.oos-banner{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border:2px solid var(--red);background:var(--card);padding:14px 18px;margin-bottom:22px}
+.oos-banner p{margin:0;font-weight:700}
 .contest-hero h2{color:#fff;font-size:clamp(1.9rem,4.2vw,2.9rem);margin:16px auto 10px;max-width:22ch}
 .contest-hero h2 em{font-style:normal;color:var(--gold)}
 .contest-hero p{color:#e6edf5;max-width:68ch;margin:0 auto}
@@ -805,7 +808,7 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
   <div class="grid grid-2">
     <article class="card"><span class="tag">Project 01 • Oversight</span><h3>Zoo Watch</h3><p>Monitoring the Los Angeles Zoo and zoos nationally: enclosure safeguards, animal deaths and transfers, accreditation findings, and public-records requests. Born from Fiona, Jewel, and Shaunzi — Zoo Watch publishes what institutions would rather announce quietly, or not at all.</p><p><strong>First actions:</strong> track the future of LA's elephant program; demand public reporting standards after any zoo animal death.</p></article>
     <article class="card"><span class="tag">Project 02 • Oversight</span><h3>Shelter Watch</h3><p>The public Watch List in the Shelter Watch tab: all six LA Animal Services shelters, tracked for overcrowding, daily walks and enrichment, staffing, cleanliness, and live outcomes. Volunteers visit, document, and report — respectfully, factually, and in the open.</p><p><strong>First actions:</strong> publish a standard scorecard; recruit one volunteer watcher per shelter.</p><button class="btn btn-light" type="button" data-goto-tab="shelter-watch">Open Shelter Watch List</button></article>
-    <article class="card"><span class="tag">Project 03 • Direct Aid</span><h3>Streets to Shelter Outreach</h3><p>Weekly outreach to homeless pets and their owners: food, water, collars and leashes, basic supplies, and warm referrals to free veterinary care, spay/neuter, and pet-friendly shelter. See the Outreach tab to join a team.</p><p><strong>First actions:</strong> Hollywood and Skid Row routes; supply kits assembled by volunteers.</p><button class="btn btn-light" type="button" data-goto-tab="outreach">Go to Outreach</button></article>
+    <article class="card"><span class="tag">Project 03 • Direct Aid</span> <span class="oos-badge">Out of Service</span><h3>Streets to Shelter Outreach</h3><p>Weekly outreach to homeless pets and their owners: food, water, collars and leashes, basic supplies, and warm referrals to free veterinary care, spay/neuter, and pet-friendly shelter. See the Outreach tab to join a team.</p><p><strong>First actions:</strong> Hollywood and Skid Row routes; supply kits assembled by volunteers.</p><button class="btn btn-light" type="button" data-goto-tab="outreach">Go to Outreach</button></article>
     <article class="card"><span class="tag">Project 04 • Policy</span><h3>Policy Lab &amp; Public Testimony</h3><p>Turning what Zoo Watch, Shelter Watch, and Outreach learn into testimony at City Hall, letters to decision-makers, and draft policy the Caucus can stand behind. Facts first, in the founder's rule for all caucus work: people — and pets — over politics.</p><p><strong>First actions:</strong> a zoo incident-reporting proposal and a shelter data-transparency proposal for Los Angeles.</p></article>
   </div>
 </div></section>
@@ -814,6 +817,7 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
 <!-- OUTREACH PANEL -->
 <div class="tab-panel" id="panel-outreach" role="tabpanel" aria-labelledby="tab-outreach" data-panel="outreach" hidden>
 <section id="outreach"><div class="wrap">
+  <div class="oos-banner"><span class="oos-badge">Out of Service</span><p>Streets to Shelter Outreach is currently out of service.</p></div>
   <div class="sec-head"><p class="sec-label">Outreach</p><h2>We go out and help homeless pets</h2>
   <p>A pet does not stop deserving care because its owner has no address. Our outreach teams serve both — the animal and the person who loves it.</p></div>
   <div class="split">
@@ -1163,7 +1167,7 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
       </ul>
     </div>
     <div class="card"><span class="tag">Who It's For</span><h3>Every pet. Every owner.</h3>
-      <p>Families between paychecks. Seniors stretching a fixed income. People living outside with a dog or cat who is their whole family — the same pets our Streets to Shelter outreach already serves. A pantry doesn't ask where you live. It just asks what your pet needs.</p>
+      <p>Families between paychecks. Seniors stretching a fixed income. People living outside with a dog or cat who is their whole family — the same pets our Streets to Shelter Outreach served before it went out of service. A pantry doesn't ask where you live. It just asks what your pet needs.</p>
       <p><strong>No money, no wish list, no middleman.</strong> The pantry <em>is</em> the ask — standing on the sidewalk, every morning.</p>
     </div>
   </div>
