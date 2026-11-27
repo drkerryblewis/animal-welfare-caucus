@@ -610,7 +610,6 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
   <button class="tab-btn" role="tab" id="tab-policy" aria-controls="panel-policy" aria-selected="false" tabindex="-1" data-tab="policy" type="button">Policy Platform</button>
   <button class="tab-btn" role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="false" tabindex="-1" data-tab="projects" type="button">Projects</button>
   <button class="tab-btn" role="tab" id="tab-outreach" aria-controls="panel-outreach" aria-selected="false" tabindex="-1" data-tab="outreach" type="button">Outreach</button>
-  <button class="tab-btn" role="tab" id="tab-board" aria-controls="panel-board" aria-selected="false" tabindex="-1" data-tab="board" type="button">Board Seats</button>
   <button class="tab-btn" role="tab" id="tab-shelter-watch" aria-controls="panel-shelter-watch" aria-selected="false" tabindex="-1" data-tab="shelter-watch" type="button">Shelter Watch</button>
   <button class="tab-btn" role="tab" id="tab-apply" aria-controls="panel-apply" aria-selected="false" tabindex="-1" data-tab="apply" type="button">Apply</button>
   <button class="tab-btn" role="tab" id="tab-contact" aria-controls="panel-contact" aria-selected="false" tabindex="-1" data-tab="contact" type="button">Get Involved</button>
@@ -1006,19 +1005,6 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
   </div>
 </div></section>
 </div><!-- /panel-outreach -->
-
-<!-- BOARD PANEL -->
-<div class="tab-panel" id="panel-board" role="tabpanel" aria-labelledby="tab-board" data-panel="board" hidden>
-<section id="board" class="alt"><div class="wrap">
-  <div class="sec-head"><p class="sec-label">Leadership</p><h2>Board seats — open for application</h2>
-  <p>Two seats are filled — the Founder &amp; Chair and the Director of Policy. The other eight seats are open. Board members are selected by application and approved personally by the Founder &amp; Chair, Dr. Kerry B. Lewis. There is no election and no automatic appointment — every application is read.</p></div>
-
-  <div class="notice" style="margin-bottom:22px"><div><strong>⚠ Résumé required — no exceptions</strong><p>Every board application <strong>must include your résumé</strong>. Attach it to your application email (PDF preferred), or paste it in full in the body of the email. <strong>Applications without a résumé will not be considered.</strong> Your résumé is how the Chair verifies your experience before approval.</p></div></div>
-
-  <div class="seat-grid" id="seatGrid"></div>
-  <div style="margin-top:22px;text-align:center"><button class="btn btn-gold" type="button" data-goto-tab="apply">Go to Application Form →</button><p style="color:var(--muted);font-size:.92rem;margin-top:8px">Résumé required — attach it to your application email.</p></div>
-</div></section>
-</div><!-- /panel-board -->
 
 <!-- SHELTER WATCH PANEL -->
 <div class="tab-panel" id="panel-shelter-watch" role="tabpanel" aria-labelledby="tab-shelter-watch" data-panel="shelter-watch" hidden>
@@ -1561,7 +1547,7 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
       <p class="foot-hours"><strong>Caucus Hours:</strong> Monday–Friday, 7:00 AM – 7:00 PM<br>Closed Saturdays, Sundays, and all holidays — but reports are always open.</p>
     </div>
     <div><h3>About</h3><a href="#" data-goto-tab="home">Our Mission</a><a href="#" data-goto-tab="policy">Policy Platform</a><a href="#" data-goto-tab="projects">Projects</a><a href="#" data-goto-tab="memorial">In Memoriam</a></div>
-    <div><h3>Take Action</h3><a href="#" data-goto-tab="board">Board Seats</a><a href="#" data-goto-tab="apply">Apply — Résumé Required</a><a href="#" data-goto-tab="outreach">Outreach</a><a href="#" data-goto-tab="shelter-watch">Shelter Watch List</a><a href="#" data-goto-tab="pantry">Fiona's Pantry</a></div>
+    <div><h3>Take Action</h3><a href="#" data-goto-tab="apply">Apply — Résumé Required</a><a href="#" data-goto-tab="outreach">Outreach</a><a href="#" data-goto-tab="shelter-watch">Shelter Watch List</a><a href="#" data-goto-tab="pantry">Fiona's Pantry</a></div>
     <div><h3>Help an Animal Now</h3><a href="tel:8884527381">LA Animal Services: (888) 452-7381</a><a href="mailto:ani.foster@lacity.org">Foster: ani.foster@lacity.org</a><a href="mailto:kerrylewis052@gmail.com?subject=Animal%20Emergency%20Report">Report to the Caucus</a></div>
   </div>
   <div class="foot-bottom">
@@ -1583,28 +1569,19 @@ var SEATS=[
  {name:"Director of Volunteer & Community Engagement",open:true,desc:"Recruits and supports volunteers, runs community meetings, and builds partnerships with rescues, clinics, and neighborhood groups."},
  {name:"Exotic & Wildlife Welfare Officer",open:true,desc:"Focuses on exotic pets and wildlife: surrender pathways, permit and welfare standards, and liaison with qualified exotic rescues."}
 ];
-var grid=document.getElementById('seatGrid');
 var sel=document.getElementById('fSeat');
 sel.innerHTML='<option value="">— Select a seat —</option>';
 SEATS.forEach(function(s){
-  var card=document.createElement('article');card.className='seat';
   if(s.open){
-    card.innerHTML='<span class="status status-open">Open — Apply Now</span><h3>'+s.name+'</h3><p>'+s.desc+'</p>';
-    var a=document.createElement('button');a.className='btn';a.type='button';a.textContent='Apply for This Seat';
-    (function(seatName){ a.addEventListener('click',function(){ activateTab('apply'); sel.value=seatName; setTimeout(function(){ document.getElementById('fName').focus(); },80); }); })(s.name);
-    card.appendChild(a);
     var o=document.createElement('option');o.value=s.name;o.textContent=s.name+' — Open';sel.appendChild(o);
-  }else{
-    card.innerHTML='<span class="status status-filled">Filled</span><h3>'+s.name+'</h3><p><strong>'+s.holder+'</strong> — '+s.desc+'</p>';
   }
-  grid.appendChild(card);
 });
 
 /* Tabs */
 var tabBtns=Array.prototype.slice.call(document.querySelectorAll('.tab-btn'));
 var tabPanels=Array.prototype.slice.call(document.querySelectorAll('.tab-panel'));
 var TAB_IDS=tabBtns.map(function(b){return b.getAttribute('data-tab');});
-var HASH_TO_TAB={home:'home',mission:'home',news:'news',memorial:'memorial',policy:'policy',projects:'projects',outreach:'outreach',board:'board','shelter-watch':'shelter-watch',apply:'apply',contact:'contact',contest:'contest','christmas-contest':'contest',pantry:'pantry','fionas-pantry':'pantry'};
+var HASH_TO_TAB={home:'home',mission:'home',news:'news',memorial:'memorial',policy:'policy',projects:'projects',outreach:'outreach','shelter-watch':'shelter-watch',apply:'apply',contact:'contact',contest:'contest','christmas-contest':'contest',pantry:'pantry','fionas-pantry':'pantry'};
 function activateTab(id,focusTab){
   if(TAB_IDS.indexOf(id)===-1) id='home';
   tabBtns.forEach(function(b){
