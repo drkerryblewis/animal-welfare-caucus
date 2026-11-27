@@ -421,6 +421,7 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
 
 /* Community Pet Registry — on-page 3-step form */
 .reg-form-wrap{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:10px;box-shadow:var(--shadow);padding:26px;margin-top:16px}
+.reg-form-wrap[hidden]{display:none}
 .reg-progress{list-style:none;display:flex;gap:0;margin:0 0 24px;padding:0}
 .reg-progress li{flex:1;display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;font-size:.86rem;font-weight:700;color:var(--muted);position:relative;padding:0 4px}
 .reg-progress li::before{content:"";position:absolute;top:19px;left:-50%;width:100%;height:3px;background:var(--line);z-index:0}
@@ -683,14 +684,14 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
       <h2>AWC Community Pet Registry</h2>
       <p>Register your dog with the Animal Welfare Caucus, free. This is a voluntary <strong style="color:#fff">COMMUNITY</strong> registry for lost dogs: if your dog ever gets lost, we’ll already have their photo and details on file to help bring them home — and after review, you’ll get a registry certificate with their own number by email.</p>
       <p>This registry is <strong style="color:#fff">not a government license</strong>. It does not replace the City of Los Angeles dog license, which is required by law for dogs over 4 months old and requires proof of rabies vaccination and a fee.</p>
-      <p><strong style="color:#fff">Registration is completely free.</strong> Just fill out the three steps in the form below — it takes a couple of minutes, right here on this page.</p>
+      <p><strong style="color:#fff">Registration is completely free.</strong> Just click the Step 1 button below to open the form — it takes a couple of minutes, right here on this page.</p>
       <div class="reg-actions">
-        <button class="btn btn-gold" type="button" id="regStartBtn">Register Your Pet</button>
+        <button class="btn btn-gold" type="button" id="regStartBtn" aria-expanded="false" aria-controls="regFormWrap">Step 1 — Register Your Pet</button>
         <span class="donate-soon">Donations Coming Soon</span>
       </div>
     </div>
   </div>
-  <div class="reg-form-wrap" id="regFormWrap">
+  <div class="reg-form-wrap" id="regFormWrap" hidden>
     <form id="petRegForm" method="post" enctype="multipart/form-data" novalidate>
       <input type="hidden" name="_subject" value="AWC Community Pet Registry — New Registration">
       <input type="hidden" name="_template" value="table">
@@ -701,7 +702,7 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
       </ol>
 
       <fieldset class="reg-pane" data-pane="1">
-        <legend>Step 1 — Register your pet</legend>
+        <legend>Your pet &amp; your contact details</legend>
         <p class="pane-intro">Tell us about your pet and how to reach you. A clear photo makes all the difference if your pet is ever found by a neighbor.</p>
         <div class="form-grid">
           <div class="field"><label for="regPetName">Pet’s name <span class="req" aria-hidden="true">*</span></label><input id="regPetName" name="Pet name" type="text" autocomplete="off" required></div>
@@ -1851,9 +1852,11 @@ document.getElementById('applyForm').addEventListener('submit',function(e){
     wrap.scrollIntoView({behavior:'smooth',block:'start'});
   }
 
-  /* Gold "Register Your Pet" button brings the visitor to the form */
+  /* Gold "Step 1 — Register Your Pet" button next to Donations Coming Soon opens the form at Step 1 */
   var startBtn=$('regStartBtn');
   if(startBtn) startBtn.addEventListener('click',function(){
+    if(wrap) wrap.hidden=false;
+    startBtn.setAttribute('aria-expanded','true');
     showStep(1);
     var first=$('regPetName');
     if(first) setTimeout(function(){ first.focus({preventScroll:true}); },350);
