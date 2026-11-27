@@ -546,22 +546,6 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
   </div>
 </div></header>
 
-<div class="thanks-banner" id="thanksBanner" role="region" aria-label="Thanksgiving greeting"><div class="wrap">
-  <h2>Happy Thanksgiving</h2>
-  <p>Grateful for every pet, every adopter, and every neighbor who shows up for them. — The Animal Welfare Caucus</p>
-</div></div>
-<script>
-(function(){
-  var banner=document.getElementById("thanksBanner");
-  if(!banner)return;
-  /* Banner comes down at 11:59 PM PST on Thanksgiving Day, Nov 26, 2026 (= Nov 27, 2026 07:59 UTC). */
-  var cutoff=Date.UTC(2026,10,27,7,59,0);
-  function check(){ if(Date.now()>=cutoff && banner.parentNode){ banner.parentNode.removeChild(banner); } }
-  check();
-  if(banner.parentNode){ setInterval(check,60000); }
-})();
-</script>
-
 <div class="thanks-banner" id="christmasBanner" role="region" aria-label="Christmas greeting" style="display:none"><div class="wrap">
   <h2>Merry Christmas</h2>
   <p>Merry Christmas from The Animal Welfare Caucus — wishing every pet a warm home and a full bowl.</p>
