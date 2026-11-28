@@ -464,6 +464,42 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
   .reg-nav .btn{flex:1}
 }
 
+/* Start a Chapter — Get Involved section + 3-step application form */
+.chapter-block{margin-top:48px;border-top:2px solid var(--line);padding-top:38px}
+.chapter-block h2{font-size:clamp(1.6rem,3vw,2.15rem);margin:0 0 10px}
+.chapter-block .ch-intro{color:var(--muted);max-width:78ch;margin:0}
+.chapter-block h3.ch-sub{font-size:1.3rem;margin:32px 0 4px}
+.ch-form-wrap{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:10px;box-shadow:var(--shadow);padding:26px;margin-top:22px}
+.ch-progress{list-style:none;display:flex;gap:0;margin:0 0 24px;padding:0}
+.ch-progress li{flex:1;display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;font-size:.86rem;font-weight:700;color:var(--muted);position:relative;padding:0 4px}
+.ch-progress li::before{content:"";position:absolute;top:19px;left:-50%;width:100%;height:3px;background:var(--line);z-index:0}
+.ch-progress li:first-child::before{display:none}
+.ch-progress li.done::before,.ch-progress li.current::before{background:var(--gold)}
+.ch-progress .p-num{position:relative;z-index:1;width:38px;height:38px;border-radius:50%;background:var(--bg2);border:2px solid var(--line);color:var(--muted);display:grid;place-items:center;font-family:"Merriweather",serif;font-weight:900;font-size:1.05rem}
+.ch-progress li.current .p-num{background:var(--gold);border-color:var(--gold-d);color:#112e51}
+.ch-progress li.done .p-num{background:var(--navy);border-color:var(--navy);color:#fff}
+.ch-progress li.current{color:var(--ink)}
+.ch-pane{border:none;margin:0;padding:0;min-width:0}
+.ch-pane legend{font-family:"Merriweather",serif;font-weight:900;font-size:1.3rem;color:var(--ink);margin-bottom:6px;padding:0}
+.ch-pane .pane-intro{color:var(--muted);margin:0 0 18px;max-width:68ch}
+.ch-pane[hidden]{display:none}
+.ch-nav{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:20px}
+.ch-nav .spacer{flex:1}
+.ch-err{display:none;font-weight:700;color:var(--red);background:#fde8ec;border:1px solid #e5a3b1;border-radius:6px;padding:12px 14px;margin:16px 0 0}
+@media(prefers-color-scheme:dark){.ch-err{background:#4a1626;border-color:#8a3a4e;color:#ffb3c2}}
+.ch-err.show{display:block}
+.ch-checks{display:grid;gap:14px;margin-bottom:6px}
+#chSubmitStatus{font-weight:700;margin:14px 0 0}
+.ch-success{text-align:center;padding:10px 6px 4px}
+.ch-success .ok-badge{width:72px;height:72px;border-radius:50%;background:var(--navy);border:3px solid var(--gold);color:var(--gold);display:grid;place-items:center;margin:0 auto 16px;font-size:2rem;font-weight:900}
+.ch-success h3{font-size:1.5rem;margin:0 0 10px}
+.ch-success p{color:var(--muted);max-width:60ch;margin:0 auto 12px}
+@media(max-width:600px){
+  .ch-form-wrap{padding:20px 16px}
+  .ch-progress li{font-size:.76rem}
+  .ch-nav .btn{flex:1}
+}
+
 /* Caucus hours — home strip + footer */
 .hours-strip{background:var(--navy);color:#fff;border-top:4px solid var(--gold);border-bottom:4px solid var(--gold)}
 .hours-strip .wrap{display:flex;gap:18px;align-items:center;padding-top:20px;padding-bottom:20px}
@@ -1220,6 +1256,104 @@ blockquote.pull cite{display:block;margin-top:10px;font-family:"Public Sans",san
     <article class="card"><h3>Volunteer</h3><p>Outreach teams, shelter watchers, drivers, supply-kit builders, and social-media help. Every role matters.</p><a class="btn btn-light" href="mailto:kerrylewis052@gmail.com?subject=Animal%20Welfare%20Caucus%20—%20Volunteer">Email to Volunteer</a></article>
     <article class="card"><h3>Report a concern</h3><p>A shelter condition, a zoo incident, an animal in danger. Tell us the place, the date, and what you saw — photos help.</p><a class="btn btn-light" href="mailto:kerrylewis052@gmail.com?subject=Animal%20Welfare%20Concern%20Report">Email a Report</a></article>
     <article class="card"><h3>Partner with us</h3><p>Rescues, street-vet teams, clinics, and community groups — we connect, we do not compete. Let's coordinate.</p><a class="btn btn-light" href="mailto:kerrylewis052@gmail.com?subject=Animal%20Welfare%20Caucus%20—%20Partnership">Email About Partnership</a></article>
+  </div>
+
+  <div class="chapter-block" id="start-a-chapter">
+    <h2>Start a Chapter</h2>
+    <p class="ch-intro">Bring the Caucus to your city. A chapter is a local team of Caucus volunteers doing the Caucus’s work where they live — watching their shelters, reporting conditions, and standing up for animals. A chapter is part of the Caucus, not its own organization. The Founder &amp; Chair approves every chapter personally.</p>
+
+    <h3 class="ch-sub">How a chapter opens</h3>
+    <div>
+      <div class="policy"><div class="policy-num" aria-hidden="true">1</div><div><h3>Apply</h3><p>Submit the full application below.</p></div></div>
+      <div class="policy"><div class="policy-num" aria-hidden="true">2</div><div><h3>Background check</h3><p>Must come back clear before the chapter can open.</p></div></div>
+      <div class="policy"><div class="policy-num" aria-hidden="true">3</div><div><h3>Interview</h3><p>Interview with the Founder &amp; Chair.</p></div></div>
+      <div class="policy"><div class="policy-num" aria-hidden="true">4</div><div><h3>Charter signed</h3><p>The chapter exists only from the date the charter is signed.</p></div></div>
+      <div class="policy"><div class="policy-num" aria-hidden="true">5</div><div><h3>Training</h3><p>Volunteer safety training and the law basics for your state.</p></div></div>
+      <div class="policy"><div class="policy-num" aria-hidden="true">6</div><div><h3>Launch</h3><p>Listed on this site with your city and your name as lead.</p></div></div>
+    </div>
+
+    <h3 class="ch-sub">The rules in brief</h3>
+    <div class="rule-box">
+      <ul>
+        <li>18 and over, background check required.</li>
+        <li>No chapter handles money: no bank account, no donations, no dues, no fundraising in the Caucus’s name without written approval.</li>
+        <li>Never say donations are tax-deductible and never say the Caucus is tax-exempt.</li>
+        <li>The Caucus name and seal are used only under a signed charter, and only as “Animal Welfare Caucus — [City] Chapter.”</li>
+        <li>Animals only — no transit watch, no police watch.</li>
+        <li>Monthly written reports to the Founder &amp; Chair.</li>
+        <li>The Founder &amp; Chair may revoke a charter at any time.</li>
+      </ul>
+    </div>
+
+    <h3 class="ch-sub">Chapter application</h3>
+    <p class="ch-intro">Complete all three steps. Every application is reviewed personally by the Founder &amp; Chair.</p>
+    <div class="ch-form-wrap" id="chFormWrap">
+      <form id="chapterForm" method="post" novalidate>
+        <input type="hidden" name="_subject" value="AWC Chapter Application — New Application">
+        <input type="hidden" name="_template" value="table">
+        <ol class="ch-progress" aria-label="Chapter application progress">
+          <li class="current" data-chprogress="1"><span class="p-num" aria-hidden="true">1</span><span>About you</span></li>
+          <li data-chprogress="2"><span class="p-num" aria-hidden="true">2</span><span>Your chapter plan</span></li>
+          <li data-chprogress="3"><span class="p-num" aria-hidden="true">3</span><span>Agreements</span></li>
+        </ol>
+
+        <fieldset class="ch-pane" data-chpane="1">
+          <legend>Step 1 — About you</legend>
+          <p class="pane-intro">Tell us who you are and where your chapter would be based.</p>
+          <div class="form-grid">
+            <div class="field"><label for="chName">Full name <span class="req" aria-hidden="true">*</span></label><input id="chName" name="Full name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="chEmail">Email <span class="req" aria-hidden="true">*</span></label><input id="chEmail" name="Email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="chPhone">Phone <span class="req" aria-hidden="true">*</span></label><input id="chPhone" name="Phone" type="tel" autocomplete="tel" required></div>
+            <div class="field"><label for="chDob">Date of birth <span class="req" aria-hidden="true">*</span></label><input id="chDob" name="Date of birth" type="date" required><p class="form-note" style="margin:6px 0 0">Chapter leads must be 18 or older.</p></div>
+            <div class="field"><label for="chCity">City <span class="req" aria-hidden="true">*</span></label><input id="chCity" name="City" type="text" autocomplete="address-level2" required></div>
+            <div class="field"><label for="chState">State <span class="req" aria-hidden="true">*</span></label><input id="chState" name="State" type="text" autocomplete="address-level1" required></div>
+            <div class="field"><label for="chZip">ZIP <span class="req" aria-hidden="true">*</span></label><input id="chZip" name="ZIP" type="text" inputmode="numeric" autocomplete="postal-code" required></div>
+          </div>
+          <p class="ch-err" id="chErr1" role="alert"></p>
+          <div class="ch-nav"><span class="spacer"></span><button class="btn btn-gold" type="button" id="chNext1">Continue to Step 2 →</button></div>
+        </fieldset>
+
+        <fieldset class="ch-pane" data-chpane="2" hidden>
+          <legend>Step 2 — Your chapter plan</legend>
+          <p class="pane-intro">Tell us why you want to start a chapter, what experience you bring, and how your chapter would begin its work.</p>
+          <div class="field"><label for="chWhy">Why do you want to start a chapter? <span class="req" aria-hidden="true">*</span></label><textarea id="chWhy" name="Why do you want to start a chapter?" required></textarea></div>
+          <div class="field"><label for="chExperience">Experience with animals, rescue, or advocacy <span class="req" aria-hidden="true">*</span></label><textarea id="chExperience" name="Experience with animals, rescue, or advocacy" required></textarea></div>
+          <div class="field"><label for="chShelters">Which shelters would your chapter watch? <span class="req" aria-hidden="true">*</span></label><textarea id="chShelters" name="Which shelters would your chapter watch?" required></textarea></div>
+          <div class="field"><label for="chPlan90">Your plan for the first 90 days <span class="req" aria-hidden="true">*</span></label><textarea id="chPlan90" name="Plan for the first 90 days" required></textarea></div>
+          <div class="form-grid">
+            <div class="field"><label for="chRef1Name">Reference 1 — name <span class="req" aria-hidden="true">*</span></label><input id="chRef1Name" name="Reference 1 name" type="text" autocomplete="off" required></div>
+            <div class="field"><label for="chRef1Rel">Reference 1 — relationship <span class="req" aria-hidden="true">*</span></label><input id="chRef1Rel" name="Reference 1 relationship" type="text" autocomplete="off" required></div>
+            <div class="field" style="grid-column:1/-1"><label for="chRef1Contact">Reference 1 — phone or email <span class="req" aria-hidden="true">*</span></label><input id="chRef1Contact" name="Reference 1 phone or email" type="text" autocomplete="off" required></div>
+            <div class="field"><label for="chRef2Name">Reference 2 — name <span class="req" aria-hidden="true">*</span></label><input id="chRef2Name" name="Reference 2 name" type="text" autocomplete="off" required></div>
+            <div class="field"><label for="chRef2Rel">Reference 2 — relationship <span class="req" aria-hidden="true">*</span></label><input id="chRef2Rel" name="Reference 2 relationship" type="text" autocomplete="off" required></div>
+            <div class="field" style="grid-column:1/-1"><label for="chRef2Contact">Reference 2 — phone or email <span class="req" aria-hidden="true">*</span></label><input id="chRef2Contact" name="Reference 2 phone or email" type="text" autocomplete="off" required></div>
+          </div>
+          <p class="ch-err" id="chErr2" role="alert"></p>
+          <div class="ch-nav"><button class="btn btn-light" type="button" id="chBack2">← Back</button><span class="spacer"></span><button class="btn btn-gold" type="button" id="chNext2">Continue to Step 3 →</button></div>
+        </fieldset>
+
+        <fieldset class="ch-pane" data-chpane="3" hidden>
+          <legend>Step 3 — Agreements</legend>
+          <p class="pane-intro">Every chapter lead must agree to all four statements, disclose any conflict of interest, and sign by typing their full name.</p>
+          <div class="ch-checks">
+            <div class="check"><input id="chAge18" name="Agreement — 18 or older" type="checkbox" value="Confirmed — I am 18 years of age or older"><label for="chAge18">I am 18 years of age or older</label></div>
+            <div class="check"><input id="chBgConsent" name="Agreement — background check consent" type="checkbox" value="Confirmed — I consent to a background check"><label for="chBgConsent">I consent to a background check</label></div>
+            <div class="check"><input id="chNoConvictions" name="Agreement — no disqualifying convictions" type="checkbox" value="Confirmed — never convicted of animal cruelty or abuse, a violent offense, theft, or fraud"><label for="chNoConvictions">I have never been convicted of animal cruelty or abuse, a violent offense, theft, or fraud</label></div>
+            <div class="check"><input id="chRulesAgree" name="Agreement — chapter rules" type="checkbox" value="Confirmed — I have read the chapter rules and agree to them"><label for="chRulesAgree">I have read the chapter rules above and agree to them — no handling money, no bank account, no fundraising in the Caucus’s name without written approval, no tax-deductible claims, Caucus name and seal only under the charter, animals only, monthly reports to the Founder &amp; Chair</label></div>
+          </div>
+          <div class="field" style="margin-top:16px"><label for="chConflict">Do you have any conflict of interest? If none, write None. <span class="opt">(optional)</span></label><textarea id="chConflict" name="Conflict of interest disclosure"></textarea></div>
+          <div class="field"><label for="chSignature">Typed signature — full name <span class="req" aria-hidden="true">*</span></label><input id="chSignature" name="Typed signature" type="text" autocomplete="off" required></div>
+          <p class="ch-err" id="chErr3" role="alert"></p>
+          <div class="ch-nav"><button class="btn btn-light" type="button" id="chBack3">← Back</button><span class="spacer"></span><button class="btn btn-gold" type="submit" id="chSubmitBtn">Submit chapter application</button></div>
+          <p id="chSubmitStatus" role="status" aria-live="polite"></p>
+        </fieldset>
+      </form>
+      <div class="ch-success" id="chSuccess" hidden>
+        <div class="ok-badge" aria-hidden="true">✓</div>
+        <h3>Application sent</h3>
+        <p>Thank you — your application has been sent. The Founder &amp; Chair reviews every application personally.</p>
+      </div>
+    </div>
   </div>
 </div></section>
 </div><!-- /panel-contact -->
@@ -2013,6 +2147,115 @@ document.getElementById('applyForm').addEventListener('submit',function(e){
     b.addEventListener('click',function(){ apply(b.getAttribute('data-filter')); });
   });
   apply('all');
+})();
+</script>
+<script>
+/* Start a Chapter — 3-step on-page application form (FormSubmit to the Caucus) */
+(function(){
+  var form=document.getElementById('chapterForm');
+  if(!form) return;
+  var wrap=document.getElementById('chFormWrap');
+  var success=document.getElementById('chSuccess');
+  var panes=Array.prototype.slice.call(form.querySelectorAll('.ch-pane'));
+  var progressItems=Array.prototype.slice.call(wrap.querySelectorAll('.ch-progress li'));
+  var current=1;
+
+  function $(id){ return document.getElementById(id); }
+  function showErr(id,msg){
+    var el=$(id);
+    if(!el) return;
+    el.textContent=msg||'';
+    el.classList.toggle('show',!!msg);
+  }
+  function showStep(n){
+    current=n;
+    panes.forEach(function(p){ p.hidden=parseInt(p.getAttribute('data-chpane'),10)!==n; });
+    progressItems.forEach(function(li){
+      var s=parseInt(li.getAttribute('data-chprogress'),10);
+      li.classList.toggle('current',s===n);
+      li.classList.toggle('done',s<n);
+      if(s===n){ li.setAttribute('aria-current','step'); } else { li.removeAttribute('aria-current'); }
+    });
+    wrap.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  function ageFromDob(value){
+    var parts=value.split('-');
+    if(parts.length!==3) return null;
+    var y=parseInt(parts[0],10), m=parseInt(parts[1],10), d=parseInt(parts[2],10);
+    if(!y||!m||!d) return null;
+    var dob=new Date(y,m-1,d);
+    if(dob.getFullYear()!==y||dob.getMonth()!==m-1||dob.getDate()!==d) return null;
+    var now=new Date();
+    var age=now.getFullYear()-y;
+    if(now.getMonth()<m-1||(now.getMonth()===m-1&&now.getDate()<d)) age--;
+    return age;
+  }
+
+  function validStep1(){
+    var missing=[];
+    [['chName','your full name'],['chEmail','your email'],['chPhone','your phone number'],['chDob','your date of birth'],['chCity','your city'],['chState','your state'],['chZip','your ZIP']].forEach(function(pair){
+      if(!$(pair[0]).value.trim()) missing.push(pair[1]);
+    });
+    if(missing.length){ showErr('chErr1','Almost there — please fill in: '+missing.join(', ')+'.'); return false; }
+    var email=$('chEmail').value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ showErr('chErr1','That email doesn’t look quite right — please check it and try again.'); return false; }
+    var age=ageFromDob($('chDob').value.trim());
+    if(age===null){ showErr('chErr1','Please enter a valid date of birth.'); return false; }
+    if(age<18){ showErr('chErr1','Chapter leads must be 18 or older — the date of birth you entered shows you are under 18, so you can’t open a chapter yet.'); return false; }
+    showErr('chErr1','');
+    return true;
+  }
+
+  function validStep2(){
+    var missing=[];
+    [['chWhy','why you want to start a chapter'],['chExperience','your experience with animals, rescue, or advocacy'],['chShelters','which shelters your chapter would watch'],['chPlan90','your plan for the first 90 days'],['chRef1Name','Reference 1’s name'],['chRef1Rel','Reference 1’s relationship'],['chRef1Contact','Reference 1’s phone or email'],['chRef2Name','Reference 2’s name'],['chRef2Rel','Reference 2’s relationship'],['chRef2Contact','Reference 2’s phone or email']].forEach(function(pair){
+      if(!$(pair[0]).value.trim()) missing.push(pair[1]);
+    });
+    if(missing.length){ showErr('chErr2','Almost there — please fill in: '+missing.join(', ')+'.'); return false; }
+    showErr('chErr2','');
+    return true;
+  }
+
+  $('chNext1').addEventListener('click',function(){ if(validStep1()) showStep(2); });
+  $('chBack2').addEventListener('click',function(){ showStep(1); });
+  $('chNext2').addEventListener('click',function(){ if(validStep2()) showStep(3); });
+  $('chBack3').addEventListener('click',function(){ showStep(2); });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(current!==3){ return; }
+    var unchecked=[];
+    [['chAge18','confirm that you are 18 years of age or older'],['chBgConsent','consent to a background check'],['chNoConvictions','confirm that you have never been convicted of animal cruelty or abuse, a violent offense, theft, or fraud'],['chRulesAgree','agree to the chapter rules']].forEach(function(pair){
+      if(!$(pair[0]).checked) unchecked.push(pair[1]);
+    });
+    if(unchecked.length){ showErr('chErr3','Please check every agreement box before submitting — you still need to: '+unchecked.join('; ')+'.'); return; }
+    if(!$('chSignature').value.trim()){ showErr('chErr3','Please sign your application by typing your full name.'); $('chSignature').focus(); return; }
+    showErr('chErr3','');
+    var btn=$('chSubmitBtn'), status=$('chSubmitStatus');
+    btn.disabled=true;
+    btn.textContent='Sending…';
+    status.style.color='';
+    status.textContent='Sending your chapter application to the Caucus…';
+
+    var data=new FormData(form);
+    fetch('https://formsubmit.co/ajax/kerrylewis052@gmail.com',{method:'POST',body:data,headers:{'Accept':'application/json'}})
+    .then(function(res){
+      if(!res.ok) throw new Error('send failed');
+      return res.json().catch(function(){ return {}; });
+    })
+    .then(function(){
+      form.hidden=true;
+      success.hidden=false;
+      success.scrollIntoView({behavior:'smooth',block:'center'});
+    })
+    .catch(function(){
+      btn.disabled=false;
+      btn.textContent='Submit chapter application';
+      status.style.color='#b31942';
+      status.textContent='Something went wrong sending your application — please check your connection and try again. Nothing was submitted.';
+    });
+  });
 })();
 </script>
 </body>
